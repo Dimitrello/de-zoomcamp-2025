@@ -1,5 +1,5 @@
  
-## 
+## Some steps
 
 Create network
 ```bash
@@ -30,6 +30,7 @@ docker run -it \
     dpage/pgadmin4
 ```
 
+Bash
 ```bash
 sudo apt install python3-venv
 python3 -m venv venv
@@ -55,7 +56,7 @@ jupyter nbconvert --to=script upload-data.ipynb
 pip install pandas sqlalchemy psycopg2-binary
 ```
 
-
+```bash
 URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
 
 python ingest_data.py \
@@ -81,21 +82,13 @@ docker run -it \
     --db=ny_taxi \
     --table_name=yellow_taxi_trips \
     --url=${URL}
+```
 
 
-
-python -m http.server
 Directory listing for /
-localhost:8000 
+```bash
+python -m http.server
+```
+open localhost:8000 
 
 
-
-
-python ingest_data_green.py \
-    --user=root \
-    --password=root \
-    --host=localhost \
-    --port=5433 \
-    --db=ny_taxi \
-    --table_name=green_taxi_trips \
-    --url=${URL}

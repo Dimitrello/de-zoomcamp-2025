@@ -1,7 +1,21 @@
 Homework 1: Docker, SQL and Terraform for Data Engineering Zoomcamp 2025
 https://github.com/DataTalksC…
 
+  1. Create Python environment and install libraries from requirements.txt
+  2. Ingest green taxi trips data - ingest_data_green.py 
+```bash
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz"
 
+python ingest_data_green.py \
+    --user=root \
+    --password=root \
+    --host=localhost \
+    --port=5433 \
+    --db=ny_taxi \
+    --table_name=green_taxi_trips \
+    --url=${URL}
+```
+  3. Ingest taxi zones data - taxi_zone_ingest.ipynb
 
 
 # Questions
